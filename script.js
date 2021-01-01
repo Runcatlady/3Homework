@@ -26,18 +26,20 @@ const passwordValues = [
 ];
 
 
-function generate() {
+
 //prompt employee for password length at least 8 characters and no more than 128 characters
 
-let userLengthprompt = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
-
-if (userLengthprompt < 8) {
+ userLengthprompt = parseInt(prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128."));
+function generate() {
+  
+if (userLengthprompt < 8 ) {
     alert("Your password must have at least 8 characters.");
     return;
 }
 if (userLengthprompt > 128) {
     alert("Your password cannot be more than 128 characters.");
     return;
+
 }
 
 //prompt employee for character types
