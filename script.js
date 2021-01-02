@@ -8,19 +8,20 @@ const generateBtn = document.querySelector("#generate").addEventListener("click"
 let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"]
+const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 
 //variable declarations
-const userlength = "";
-const confirmSpecialCharacter;
-const confirmNumericCharacter;
-const confirmUppercase;
-const confirmLowercase;
+const confirmlength = confirm("Choose a password length from 8 characters up to 128 characters");
+const confirmSpecialCharacter = confirm("Would you like special characters in your password?");
+const confirmNumericCharacter = confirm("Would you like to use numbers in your password?");
+const confirmUppercase = confirm("Would you like to have upper case characters in your password?");
+const confirmLowercase = confirm("Would you like to have lower case characters in your password?");
 
 
 //alert employee to create a new password
 function generatePassword() {
     alert("Please create a new, more secure password.");
+    
 
 const length = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
 
