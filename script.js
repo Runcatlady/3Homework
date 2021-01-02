@@ -1,17 +1,8 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+const generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
+
 
 //Character type arrays
 let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -20,7 +11,7 @@ const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"]
 
 //variable declarations
-const confirmlength = "";
+const userlength = "";
 const confirmSpecialCharacter;
 const confirmNumericCharacter;
 const confirmUppercase;
@@ -31,22 +22,33 @@ const confirmLowercase;
 function generatePassword() {
     alert("Please create a new, more secure password.");
 
-const confirmlength = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
+const length = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
 
 //create a while loop if employee chooses values outside the parameters
-while(confirmlength <=7 || confirmlength >= 129) {
-  if (confirmlength < 8 ) {
-    alert("Your password must have at least 8 characters.");
-    return;
-}
-if (confirmlength > 128) {
-    alert("Your password cannot be more than 128 characters.");
+while(userlength <=7 || userlength >= 129) {
+  if (userlength < 8 ) {
+    alert("Your password must have at least 8 characters and no more than 128 characters.");
     return;
 }
 
+
 }
 }
-alert("Your password will have " + confirmlength + "characters.");
+alert("Your password will have " + userlength + "characters.");
+
+
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+
 
 
 
