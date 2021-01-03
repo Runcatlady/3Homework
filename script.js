@@ -19,7 +19,6 @@ const length = prompt("How many characters would you like your password to have?
 const numslength = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128];
 
 //create a for loop if employee chooses values outside the parameters
-for (i = 0; i < 128; i++) {
 if (length < 8 || length > 129) {
     alert("Your password must have at least 8 characters and no more than 128 characters.");
     return;
@@ -38,12 +37,49 @@ const confirmLowercase = confirm("Would you like to have lower case characters i
 //alert at least one must be used if none are chosen
 if (confirmSpecialCharacter === false && confirmNumericCharacter === false && confirmUppercase === false && confirmLowercase === false) {
     alert("You must choose at least one character type to be included in your password.");
-    return;
 }
 
 
+if (confirmSpecialCharacter && confirmNumericCharacter && confirmUppercase && confirmLowercase) {
+    alert("Your password will contain " + length + " characters with all 4 character  types.");
 }
+else if (!confirmNumericCharacter && !confirmUppercase && !confirmLowercase ) {
+    alert("Your password will contain " + length + " special characters");
 }
+else if (!confirmSpecialCharacter && !confirmUppercase && !confirmLowercase) {
+    alert("Your password will only contain" + length + " numeric characters.");
+}
+else if (!confirmSpecialCharacter && !confirmNumericCharacter && confirmLowercase) {
+    alert("Your password will only contain" + length + " uppercase characters.");
+}
+else if (!confirmSpecialCharacter && !confirmNumericCharacter && !confirmUppercase) {
+    alert("Your password will only contain " + length + " lowercase characters.");
+}
+else if (!confirmUppercase && !confirmLowercase) {
+    alert("Your password will contain " + length + " special and numeric characters.");
+}
+else if (!confirmNumericCharacter && !confirmLowercase) {
+    alert("Your password will contain " + length + " special and uppercase characters.");
+}
+else if (!confirmNumericCharacter && !confirmUppercase) {
+    alert("Your password will contain " + length + " special and lowercase characters.");
+}
+else if (!confirmLowercase && !confirmSpecialCharacter) {
+    alert("Your password will contain " + length + " numeric and uppercase characters.");
+}
+else if (!confirmUppercase && !confirmSpecialCharacter) {
+    alert("Your password will contain " + length + " numeric and lowercase characters.");
+}
+else if (!confirmSpecialCharacter && !confirmNumericCharacter) {
+    alert("Your password will contain " + length + " uppercase and lowercase characters.");
+}
+
+}
+
+
+
+
+
          
 
 
