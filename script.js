@@ -79,16 +79,17 @@ else if (!confirmLowercase) {
     alert("Your password will contain " + length + " special, number and uppercase characters.");
 }
 else if (!confirmNumericCharacter) {
-    alert("Your password will contain " + length + "special, lowercase and uppercase characters.");
+    alert("Your password will contain " + length + " special, lowercase and uppercase characters.");
 }
 else if (!confirmUppercase) {
-    alert("Your password will contain " + length + "special, number and lowercase characters.");
+    alert("Your password will contain " + length + " special, number and lowercase characters.");
 }
 else if (!confirmSpecialCharacter) {
-    alert("Your password will contain " + length + "number, lowercase and uppercase characters.");
+    alert("Your password will contain " + length + " number, lowercase and uppercase characters.");
 }
 
 }
+function myfunction() {}
 
 
 
