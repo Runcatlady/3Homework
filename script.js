@@ -5,7 +5,7 @@ const generateBtn = document.querySelector("#generate").addEventListener("click"
 
 
 //Character type arrays
-let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
@@ -43,6 +43,8 @@ if (confirmSpecialCharacter === false && confirmNumericCharacter === false && co
 if (confirmSpecialCharacter && confirmNumericCharacter && confirmUppercase && confirmLowercase) {
     alert("Your password will contain " + length + " characters with all 4 character  types.");
 }
+
+
 else if (!confirmNumericCharacter && !confirmUppercase && !confirmLowercase ) {
     alert("Your password will contain " + length + " special characters");
 }
@@ -73,15 +75,20 @@ else if (!confirmUppercase && !confirmSpecialCharacter) {
 else if (!confirmSpecialCharacter && !confirmNumericCharacter) {
     alert("Your password will contain " + length + " uppercase and lowercase characters.");
 }
-
+else if (!confirmLowercase) {
+    alert("Your password will contain " + length + " special, number and uppercase characters.");
+}
+else if (!confirmNumericCharacter) {
+    alert("Your password will contain " + length + "special, lowercase and uppercase characters.");
+}
+else if (!confirmUppercase) {
+    alert("Your password will contain " + length + "special, number and lowercase characters.");
+}
+else if (!confirmSpecialCharacter) {
+    alert("Your password will contain " + length + "number, lowercase and uppercase characters.");
 }
 
-
-
-
-
-         
-
+}
 
 
 
