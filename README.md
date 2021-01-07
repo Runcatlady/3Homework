@@ -6,6 +6,8 @@ The JavaScript password generator needs to allow an employee to generate a rando
 
 When the employee clicks on the "Generate Password" button they are alerted they need to create a new, more secure password. Then they are prompted to enter the length in which they would like their password to be. If they choose a number outside the parameters they are alerted what the parameters are and are prompted again. Then they are asked which character types they would like to include in their password with a parameter of at least one character type. Once they have chosen which character type(s) to be included they are alerted the length and which character types they have chosen. Then a random password is generated and is displayed in an alert on the page.
 
+There are 4 screenshots provided in the assets file to see how the site prompts the employee through the program.
+
 https://Runcatlady.github.io/3Homework/
 
 ## Installation

@@ -9,11 +9,23 @@ const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-const userPicks = [];
+const userPass = [];
 const passwordCharacters = ["number", "upperChar", "lowerChar", "specialChar"];
 
 
 //alert employee to create a new password
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+
+  passwordText.value = password;
+
+}
+
 function generatePassword() {
     alert("Please create a new, more secure password.");
     
@@ -89,39 +101,68 @@ else if (!confirmSpecialCharacter) {
     alert("Your password will contain " + length + " number, lowercase and uppercase characters.");
 }
 
+//set variable for the minimum count for characters types
+const minCount = 0;
+//set variable to hold empty minimums for each character type
+const minNumber = "";
+const minSpecialChar = "";
+const minLower = "";
+const minUpper = "";
+
+// Create generator functions
+const userPicks = {
+    getNumbers: function() {
+        return number[Math.floor(Math.random() * number.length)];
+    },
+    getSpecialChar: function() {
+        return specialChar[Math.floor(Math.random() * specialChar.length)];
+    },
+    getLowerChar: function() {
+        return lowerChar[Math.floor(Math.random() * lowerChar.length)];
+    },
+    getUpperChar: function() {
+        return upperChar[Math.floor(Math.random() * upperChar.length)];
+    }
+
+}
+
 //generate password with the employees selected criteria
 
 
 if (confirmSpecialCharacter === true) {  
-    userPicks.push(specialChar);
-    console.log(userPicks);
+    minSpecialChar = userPicks.getSpecialChar();
+    minCount++;
+    console.log();
 }
 if (confirmLowercase === true) {
-    userPicks.push(lowerChar);
+    minLower = userPicks.getLowerChar();
+    minCount++;
     console.log(userPicks);     
 } 
 if (confirmNumericCharacter === true) {
-    userPicks.push(number);
+    minNumber = userPicks.getNumbers();
+    minCount++;
 }  
 if (confirmUppercase) {
-    userPicks.push(upperChar);
+    minUpper = userPicks.getUpperChar();
+    minCount++;
 }
-  for (let i = 0; i < length; i++) {
-    const randomChar = userPicks[Math.floor(Math.random() * userPicks.length)];
-  } 
+
+//create a variable to hold empty string resulting from for loop
+const randomPassword = "";
+  for (let i = 0; i < (parseInt(length) - minCount); i++) {
+    const randomChar = Math.floor(Math.random() * length);
     console.log(randomChar);
 
+    randomPassword += randomChar;
+
+  } 
+
+  randomPassword += minUpper;
+  randomPassword += minNumber;
+  randomPassword += minLower;
+  randomPassword += minSpecialChar;
+
+  return randomPassword
+
 }
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-
-  passwordText.value = password;
-
-}
-
-generatePassword();
