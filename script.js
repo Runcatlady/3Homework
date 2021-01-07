@@ -112,8 +112,11 @@ if (confirmNumericCharacter === true) {
 if (confirmUppercase) {
     userPicks.push(upperChar);
 }
-    
-    console.log(passwordCharacters);
+  for (let i = 0; i < length; i++) {
+    const randomPassword = userPicks[Math.floor(Math.random() * userPicks.length)];
+  } 
+    console.log(randomPassword);
+
 }
 
 
