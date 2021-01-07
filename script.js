@@ -9,12 +9,10 @@ const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-
-
+const userPicks = [];
+const passwordCharacters = ["number", "upperChar", "lowerChar", "specialChar"];
 //alert employee to create a new password
 function generatePassword() {
-
-    const passwordCharacters = ["number", "upperChar", "lowerChar", "specialChar"];
 
     const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -100,25 +98,30 @@ else if (!confirmSpecialCharacter) {
 //generate password with the employees selected criteria
 
 
-if (confirmSpecialCharacter === true || confirmLowercase === true || confirmNumericCharacter === true || confirmUppercase) {
-
-    const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-
+if (confirmSpecialCharacter === true) {  
+    userPicks.push(specialChar);
+    console.log(userPicks);
+}
+if (confirmLowercase === true) {
+    userPicks.push(lowerChar);
+    console.log(userPicks);     
+} 
+if (confirmNumericCharacter === true) {
+    userPicks.push(number);
+}  
+if (confirmUppercase) {
+    userPicks.push(upperChar);
+}
     
-
     console.log(passwordCharacters);
 }
-}
+
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  const passwordCharacters = passwordCharacters.concat(number);
 
   passwordText.value = password;
 
