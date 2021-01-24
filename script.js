@@ -1,16 +1,16 @@
 // Assignment Code
 // Add event listener to generate button
 
-const generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
+var generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
 
 
 //Character type arrays
-const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-const lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-const userPass = [];
-const passwordCharacters = ["number", "upperChar", "lowerChar", "specialChar"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+var userPass = [];
+var passwordCharacters = ["number", "upperChar", "lowerChar", "specialChar"];
 
 
 //alert employee to create a new password
@@ -29,7 +29,7 @@ function writePassword() {
 function generatePassword() {
     alert("Please create a new, more secure password.");
     
-const length = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
+var length = prompt("How many characters would you like your password to have? Enter a number no less than 8 and no more than 128.");
 
 //create a for loop if employee chooses values outside the parameters
 if (length < 8 || length > 129) {
@@ -42,10 +42,10 @@ alert("Your password will have " + length + " characters.");
 
 //variable declarations of character types
 //confirm which character types are to be used in the new password
-const confirmSpecialCharacter = confirm("Would you like special characters in your password?");
-const confirmNumericCharacter = confirm("Would you like to use numbers in your password?");
-const confirmUppercase = confirm("Would you like to have upper case characters in your password?");
-const confirmLowercase = confirm("Would you like to have lower case characters in your password?");
+var confirmSpecialCharacter = confirm("Would you like special characters in your password?");
+var confirmNumericCharacter = confirm("Would you like to use numbers in your password?");
+var confirmUppercase = confirm("Would you like to have upper case characters in your password?");
+var confirmLowercase = confirm("Would you like to have lower case characters in your password?");
 
 //alert at least one must be used if none are chosen
 if (confirmSpecialCharacter === false && confirmNumericCharacter === false && confirmUppercase === false && confirmLowercase === false) {
@@ -102,15 +102,15 @@ else if (!confirmSpecialCharacter) {
 }
 
 //set variable for the minimum count for characters types
-const minCount = 0;
+var minCount = 0;
 //set variable to hold empty minimums for each character type
-const minNumber = "";
-const minSpecialChar = "";
-const minLower = "";
-const minUpper = "";
+var minNumber = "";
+var minSpecialChar = "";
+var minLower = "";
+var minUpper = "";
 
 // Create generator functions
-const userPicks = {
+var userPicks = {
     getNumbers: function() {
         return number[Math.floor(Math.random() * number.length)];
     },
@@ -132,12 +132,12 @@ const userPicks = {
 if (confirmSpecialCharacter === true) {  
     minSpecialChar = userPicks.getSpecialChar();
     minCount++;
-    console.log();
+    console.log(minSpecialChar);
 }
 if (confirmLowercase === true) {
     minLower = userPicks.getLowerChar();
     minCount++;
-    console.log(userPicks);     
+    console.log(minLower);     
 } 
 if (confirmNumericCharacter === true) {
     minNumber = userPicks.getNumbers();
@@ -149,9 +149,9 @@ if (confirmUppercase) {
 }
 
 //create a variable to hold empty string resulting from for loop
-const randomPassword = "";
-  for (let i = 0; i < (parseInt(length) - minCount); i++) {
-    const randomChar = Math.floor(Math.random() * length);
+var randomPassword = "";
+  for (let i = 0; i < length - minCount; i++) {
+    var randomChar = Math.floor(Math.random() * length);
     console.log(randomChar);
 
     randomPassword += randomChar;
